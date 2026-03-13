@@ -27,7 +27,7 @@ export default function Footer() {
                             >
                                 <Linkedin size={18} />
                             </a>
-                            <a href="tel:+91XXXXXXXXXX" className="footer-social-link" aria-label="Call us">
+                            <a href="tel:+919885695595" className="footer-social-link" aria-label="Call us">
                                 <Phone size={18} />
                             </a>
                             <a href="mailto:rkkonna@gmail.com" className="footer-social-link" aria-label="Email us">
@@ -92,6 +92,17 @@ export default function Footer() {
                         <Link href="/portfolio">Portfolio</Link>
                         <Link href="/schedule-meeting">Contact</Link>
                     </nav>
+                    <p className="footer-copy" style={{ textAlign: 'right' }}>
+                        Designed &amp; Developed by{' '}
+                        <a
+                            href="https://www.lalitendra.in"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="dev-credit-link"
+                        >
+                            Lalitendra
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
