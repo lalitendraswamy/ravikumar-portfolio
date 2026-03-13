@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const showcaseItems = [
     {
@@ -64,17 +64,31 @@ const stats = [
     { number: '4', label: 'Core Specialisations' },
 ];
 
-const VISIBLE = 3;
+const VISIBLE_DESKTOP = 3;
+const VISIBLE_TABLET = 2;
+const VISIBLE_MOBILE = 1;
 
 export default function PortfolioClient() {
     const [startIndex, setStartIndex] = useState(0);
+    const [visibleCount, setVisibleCount] = useState(VISIBLE_DESKTOP);
     const total = showcaseItems.length;
+
+    useEffect(() => {
+        const update = () => {
+            if (window.innerWidth <= 600) setVisibleCount(VISIBLE_MOBILE);
+            else if (window.innerWidth <= 900) setVisibleCount(VISIBLE_TABLET);
+            else setVisibleCount(VISIBLE_DESKTOP);
+        };
+        update();
+        window.addEventListener('resize', update);
+        return () => window.removeEventListener('resize', update);
+    }, []);
 
     const prev = () => setStartIndex((i) => (i - 1 + total) % total);
     const next = () => setStartIndex((i) => (i + 1) % total);
 
-    // Build the 3 visible items (wrapping around)
-    const visibleItems = Array.from({ length: VISIBLE }, (_, offset) =>
+    // Build the visible items (wrapping around)
+    const visibleItems = Array.from({ length: visibleCount }, (_, offset) =>
         showcaseItems[(startIndex + offset) % total]
     );
 
@@ -116,7 +130,7 @@ export default function PortfolioClient() {
                     </p>
 
                     {/* Outer wrapper holds arrows + track */}
-                    <div style={{ position: 'relative', padding: '0 2.5rem' }}>
+                    <div className="carousel-wrapper">
                         {/* Prev arrow */}
                         <button
                             onClick={prev}
@@ -152,14 +166,8 @@ export default function PortfolioClient() {
                             <ChevronLeft size={20} />
                         </button>
 
-                        {/* 3-card grid — same proportions as original grid */}
-                        <div
-                            style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(3, 1fr)',
-                                gap: '1.5rem',
-                            }}
-                        >
+                        {/* card grid */}
+                        <div className="carousel-grid">
                             {visibleItems.map((item: any, idx) => (
                                 <div
                                     key={`${startIndex}-${idx}`}

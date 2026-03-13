@@ -92,7 +92,7 @@ export default function Footer() {
                         <Link href="/portfolio">Portfolio</Link>
                         <Link href="/schedule-meeting">Contact</Link>
                     </nav>
-                    <p className="footer-copy" style={{ textAlign: 'right' }}>
+                    <p className="footer-copy">
                         Designed &amp; Developed by{' '}
                         <a
                             href="https://www.lalitendra.in"

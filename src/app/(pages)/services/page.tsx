@@ -118,18 +118,10 @@ export default function ServicesPage() {
                 >
                     <div className="container">
                         <div
-                            className="about-wrapper"
-                            style={{ flexDirection: index % 2 !== 0 ? 'row-reverse' : 'row' }}
+                            className={`service-row${index % 2 !== 0 ? ' service-row-reverse' : ''}`}
                         >
                             {/* Icon & Visual Side */}
-                            <div
-                                style={{
-                                    flex: 1,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                }}
-                            >
+                            <div className="service-visual">
                                 <div
                                     className="glass-card"
                                     style={{ textAlign: 'center', width: '100%', maxWidth: '360px' }}
@@ -148,10 +140,8 @@ export default function ServicesPage() {
                             </div>
 
                             {/* Content Side */}
-                            <div style={{ flex: 1.5 }}>
-                                <h2 style={{ fontSize: '2rem', marginBottom: '1rem', letterSpacing: '-0.5px' }}>
-                                    {service.title}
-                                </h2>
+                            <div className="service-content">
+                                <h2>{service.title}</h2>
                                 <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', lineHeight: 1.8 }}>
                                     {service.description}
                                 </p>
