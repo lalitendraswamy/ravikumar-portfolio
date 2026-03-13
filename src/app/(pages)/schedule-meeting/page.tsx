@@ -67,12 +67,7 @@ export default function ScheduleMeetingPage() {
             <section className="section bg-gradient">
                 <div className="container">
                     <div
-                        style={{
-                            display: 'grid',
-                            gridTemplateColumns: '1fr 1.5fr',
-                            gap: '3rem',
-                            alignItems: 'start',
-                        }}
+                        className="schedule-grid"
                     >
                         {/* Contact Info */}
                         <div>

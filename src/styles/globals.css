@@ -53,6 +53,12 @@ a {
     padding: 0 2rem;
 }
 
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+}
+
 .section {
     padding: 6rem 0;
     position: relative;
@@ -773,6 +779,21 @@ textarea.input-field {
     .footer-brand {
         grid-column: 1 / -1;
     }
+
+    /* On tablet, collapse the 3-col bottom bar to 2 rows:
+       copyright on its own line, nav + credit side by side */
+    .footer-bottom {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 0.75rem;
+    }
+
+    .footer-bottom>.footer-copy:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom>.footer-copy:last-child {
+        text-align: right;
+    }
 }
 
 @media (max-width: 600px) {
@@ -784,20 +805,134 @@ textarea.input-field {
         grid-column: auto;
     }
 
+    .footer-tagline {
+        max-width: 100%;
+    }
+
+    /* Fully stack bottom bar — center everything */
     .footer-bottom {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 0.75rem;
     }
 
-    .footer-bottom .footer-copy:last-child {
+    .footer-bottom>.footer-copy:last-child {
         text-align: center;
+    }
+
+    .footer-bottom-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 }
 
 /* Schedule meeting page responsive */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+}
+
 @media (max-width: 900px) {
     .schedule-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Services page — responsive service row */
+.service-row {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.service-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.service-visual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-content {
+    flex: 1.5;
+}
+
+.service-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+@media (max-width: 900px) {
+
+    .service-row,
+    .service-row-reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .service-visual {
+        width: 100%;
+    }
+
+    .service-content h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-content h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Portfolio carousel responsive */
+.carousel-wrapper {
+    position: relative;
+    padding: 0 2.5rem;
+}
+
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .carousel-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carousel-wrapper {
+        padding: 0 2rem;
+    }
+
+    /* Hide the third card on tablet — we show 2 out of 3 */
+    .carousel-grid> :nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-wrapper {
+        padding: 0 2.75rem;
+    }
+
+    /* Show only first card on mobile */
+    .carousel-grid> :nth-child(2),
+    .carousel-grid> :nth-child(3) {
+        display: none;
     }
 }
 
