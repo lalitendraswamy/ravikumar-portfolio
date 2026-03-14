@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "../styles/globals.css";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import WhatsAppFloat from "../components/ui/WhatsAppFloat";
 
 export const viewport: Viewport = {
     themeColor: "#f4f4f8",
@@ -13,6 +14,10 @@ export const metadata: Metadata = {
         "25+ years of trust. Ravi Kumar is a Principal Consultant providing Construction, Planning, PMC, Real Estate Valuation, and Vaastu Services in Andhra Pradesh.",
     keywords:
         "Civil Engineering Andhra Pradesh, PMC Services, Vaastu Consultant, Construction Planning, Real Estate Valuation, Sadhguru Associates",
+    icons: {
+        icon: "/logo.png",
+        apple: "/logo.png",
+    },
     openGraph: {
         title: "Sadhguru Associates | Civil Engineering & PMC",
         description:
@@ -32,6 +37,7 @@ export default function RootLayout({
                 <Navbar />
                 {children}
                 <Footer />
+                <WhatsAppFloat />
             </body>
         </html>
     );

@@ -91,7 +91,7 @@ export default function AboutPage() {
                                     <div className="text-muted">Years Experience</div>
                                 </div>
                                 <div className="stat-box">
-                                    <div className="stat-number">50+</div>
+                                    <div className="stat-number">150+</div>
                                     <div className="text-muted">Projects Completed</div>
                                 </div>
                                 <div className="stat-box">

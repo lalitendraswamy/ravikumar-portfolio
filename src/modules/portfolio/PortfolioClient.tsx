@@ -59,7 +59,7 @@ const showcaseItems = [
 
 const stats = [
     { number: '25+', label: 'Years of Experience' },
-    { number: '50+', label: 'Projects Completed' },
+    { number: '150+', label: 'Projects Completed' },
     { number: '100%', label: 'Client Satisfaction' },
     { number: '4', label: 'Core Specialisations' },
 ];
