@@ -82,7 +82,7 @@ export default function Home() {
                             </p>
                             <div className="grid grid-2" style={{ gap: '1rem', marginBottom: '2rem' }}>
                                 <div className="stat-box">
-                                    <div className="stat-number">50+</div>
+                                    <div className="stat-number">150+</div>
                                     <div className="text-muted">Projects Completed</div>
                                 </div>
                                 <div className="stat-box">
