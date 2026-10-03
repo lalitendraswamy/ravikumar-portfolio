@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const PHONE_NUMBER = "919885695595"; // country code + number, no +
 const PREDEFINED_MESSAGE =
-    "Hello! I found your profile and I'm interested in discussing a project. Could you please share more details about your services?";
+    "Hello Ravi garu, I found your profile and I'm interested in discussing a project. Could you please share more details about your services?";
 
 export default function WhatsAppFloat() {
     const [hovered, setHovered] = useState(false);
