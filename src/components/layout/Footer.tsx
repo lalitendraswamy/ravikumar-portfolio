@@ -42,6 +42,7 @@ export default function Footer() {
                         <ul className="footer-links">
                             <li><Link href="/">Home</Link></li>
                             <li><Link href="/about">About Us</Link></li>
+                            <li><Link href="/products">Products</Link></li>
                             <li><Link href="/services">Our Services</Link></li>
                             <li><Link href="/portfolio">Portfolio</Link></li>
                             <li><Link href="/schedule-meeting">Schedule Meeting</Link></li>
@@ -88,6 +89,7 @@ export default function Footer() {
                     </p>
                     <nav className="footer-bottom-links" aria-label="Footer navigation">
                         <Link href="/about">About</Link>
+                        <Link href="/products">Products</Link>
                         <Link href="/services">Services</Link>
                         <Link href="/portfolio">Portfolio</Link>
                         <Link href="/schedule-meeting">Contact</Link>
